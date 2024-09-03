@@ -12,11 +12,7 @@ const getAllUsers = asyncHandler(async (req, res) => {
   if (!users?.length) {
     return res.status(400).json({ message: "No users found" });
   }
-  res.json({
-    success: true,
-    length: users.length,
-    data: users,
-  });
+  res.json(users);
 });
 
 // @desc Create a users
@@ -116,7 +112,7 @@ const deleteUser = asyncHandler(async (req, res) => {
   }
 
   const result = await user.deleteOne();
-  
+
   const reply = `Username ${user.username} with ID ${user._id} deleted`;
 
   res.json(reply);

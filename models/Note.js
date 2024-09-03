@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const AutoIncrement = require("mongoose-sequence")(mongoose);
+const AutoIncrement = require("mongoose-sequence-generator")(mongoose);
 
 const noteSchema = new mongoose.Schema(
   {
@@ -33,4 +33,3 @@ noteSchema.plugin(AutoIncrement, {
 });
 
 module.exports = mongoose.model("Note", noteSchema);
-//  TODO: npm i mongoose-sequence@5
