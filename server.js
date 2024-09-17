@@ -1,4 +1,8 @@
 require("dotenv").config();
+/* NOTE: to catch async everywhere in our application, 
+*no need to wrap each async function. it will work automatically
+*/
+// require("express-async-errors")
 const express = require("express");
 const app = express();
 const path = require("path");
